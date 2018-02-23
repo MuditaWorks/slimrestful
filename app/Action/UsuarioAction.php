@@ -5,12 +5,10 @@ namespace App\Action;
 final class UsuarioAction extends AbstractAction{
 
     public function login($request, $response) {
-        $vars['page'] = 'login';
-        return $this->container->view->render($response, 'template.phtml', $vars);
+        return json_encode(['teste']);
     }
 
     public function cadastro($request, $response) {
-        $vars['page'] = 'cadastro';
-        return $this->container->view->render($response, 'template.phtml', $vars);
+        return json_encode(['teste']);
     }
 }

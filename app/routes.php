@@ -22,7 +22,7 @@ if ($dir = opendir(__DIR__.'/Action/')) {
                         $funcName .= strtolower($func->name);
                     }
 
-                    $app->get('/' . $name . $funcName, "App\\Action\\{$filename}:{$func->name}");
+                    $app->any('/' . $name . $funcName, "App\\Action\\{$filename}:{$func->name}");
                 }
             }
 
