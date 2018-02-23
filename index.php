@@ -1,14 +1,19 @@
 <?php
 
-use \Psr\Http\Message\ServerRequestInterface as Request;
-use \Psr\Http\Message\ResponseInterface as Response;
+error_reporting(E_ALL | E_STRICT);
+ini_set('display_errors', 'On');
 
 require_once 'vendor/autoload.php';
+require_once 'config/constantes.php';
+require_once 'config/config.php';
 
-$app = new Slim\App();
-$app->get('/', function(Request $req, Response $res, array $args) {
-    $res->getBody()->write("Olá Mundo!");
-    return $res;
-});
+
+$app = new \Slim\App(["settings" => $config]);
+
+$container = $app->getContainer();
+
+$container['view'] = new Slim\Views\PhpRenderer("resources/views/");
+
+require 'app/routes.php';
 
 $app->run();
