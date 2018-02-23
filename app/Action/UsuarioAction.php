@@ -2,12 +2,7 @@
 
 namespace App\Action;
 
-final class UsuarioAction {
-
-    public function __construct($container)
-    {
-        $this->container = $container;
-    }
+final class UsuarioAction extends AbstractAction{
 
     public function login($request, $response) {
         $vars['page'] = 'login';

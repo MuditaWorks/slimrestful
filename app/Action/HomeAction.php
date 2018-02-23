@@ -2,14 +2,7 @@
 
 namespace App\Action;
 
-final class HomeAction {
-
-    private $container;
-
-    public function __construct($container)
-    {
-        $this->container = $container;
-    }
+final class HomeAction extends AbstractAction{
 
     public function home($request, $response)
     {
