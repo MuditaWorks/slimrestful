@@ -1,8 +1,7 @@
 {
     "require": {
         "slim/slim": "^3.0",
-        "slim/php-view": "^2.2",
-        "doctrine/orm": "^2.5"
+        "slim/php-view": "^2.2"
     },
 
     "autoload": {

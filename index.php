@@ -1,13 +1,17 @@
 <?php
-header('Content-Type: application/json');
+//phpinfo();
+//exit;
+
+header('Content-Type: application/json; charset=utf-8');
 
 error_reporting(E_ALL | E_STRICT);
 ini_set('display_errors', 'On');
 
+use App\Model\UsuarioModel;
+
 require_once 'vendor/autoload.php';
 require_once 'config/constantes.php';
 require_once 'config/config.php';
-
 
 $app = new \Slim\App(["settings" => $config]);
 
