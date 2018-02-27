@@ -19,6 +19,10 @@ $container = $app->getContainer();
 
 $container['view'] = new Slim\Views\PhpRenderer("resources/views/");
 
+$app->delete('/teste/[{params}]', function($request, $response, $args){
+    var_dump($args['params']);
+});
+
 require 'app/routes.php';
 
 $app->run();

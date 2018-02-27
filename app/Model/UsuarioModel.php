@@ -11,4 +11,9 @@ class UsuarioModel extends AbstractModel {
         'status' => '1'
     ];
     protected $campoChave = 'idusu';
+
+    public function antesGravar()
+    {
+        $this->atributos['senha'] = md5($this->atributos['senha']);
+    }
 }

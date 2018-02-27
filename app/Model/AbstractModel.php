@@ -81,4 +81,26 @@ WHERE {$this->campoChave} = {$this->atributos[$this->campoChave]}
 DML;
         return $this->executar($sql);
     }
+
+    public function apagar() {
+        $id = $this->atributos[$this->campoChave];
+        $sql = <<<DML
+DELETE FROM {$this->tableName} WHERE {$this->campoChave} = {$id}
+DML;
+        return $this->executar($sql);
+    }
+
+    public function listar($id = null) {
+        $id = empty($id) ? $this->atributos[$this->campoChave] : $id;
+        $where = !empty($id) ? " WHERE {$this->campoChave} = {$id}" : '';
+        $campos = implode(',', array_keys($this->atributos));
+        $sql = <<<DML
+SELECT
+    {$campos}
+FROM {$this->tableName}
+{$where}
+DML;
+        $res = $this->executar($sql)->fetchAll(\PDO::FETCH_NAMED);
+        return $res;
+    }
 }
