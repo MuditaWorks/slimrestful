@@ -100,7 +100,12 @@ SELECT
 FROM {$this->tableName}
 {$where}
 DML;
-        $res = $this->executar($sql)->fetchAll(\PDO::FETCH_NAMED);
+        $res = [];
+        if (!empty($id)){
+            $res = $this->executar($sql)->fetchAll(\PDO::FETCH_NAMED)[0];
+        } else {
+            $res = $this->executar($sql)->fetchAll(\PDO::FETCH_NAMED);
+        }
         return $res;
     }
 }
