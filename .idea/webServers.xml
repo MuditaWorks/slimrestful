@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="7b23422b-c5ff-4316-acb7-a7f5831e2a52" name="ftp.danielbezerra.net.br" url="http://ftp.danielbezerra.net.br">
+        <fileTransfer host="ftp.danielbezerra.net.br" port="21">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="21" />
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>
